@@ -1,4 +1,6 @@
 ### How to run
+Make a copy of .env.example with your own values
+
 `cd backend` \
 `npm install` \
 `node index.js`
