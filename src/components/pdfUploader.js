@@ -9,12 +9,18 @@ const PdfUploader = () => {
     console.log(e.target)
     setSelectedFile(e.target.files[0]);
   };
-
+  
+  const handleClear = () => {
+    setExtractedText("")
+    return;
+  }
   const handleUpload = async () => {
     if (!selectedFile) {
       alert("Please select a PDF file first.");
       return;
     }
+
+  
 
     const formData = new FormData();
     formData.append("pdfFile", selectedFile);
@@ -48,6 +54,8 @@ const PdfUploader = () => {
         placeholder="Your PDF text will appear here..."
         readOnly
       />
+      <br />
+      <button  type="ClearButton" onClick={handleClear}>Clear</button>
     </div>
   );
 };
