@@ -39,11 +39,6 @@ const Output = () => {
       />
       <br />
       <button  type="ClearButton" onClick={handleClear}>Clear</button>
-      <form action="/submit" method="POST">
-      <label for="userInput">Enter Text:</label>
-      <input type="text" id="userInput" name="userInput" />
-      <button type="submit">Submit</button>
-      </form>
     </div>
   )
 
