@@ -4,6 +4,20 @@ import axios from "axios";
 const PdfUploader = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [extractedText, setExtractedText] = useState("");
+  
+  const jsonToPrettyString = (json) => {
+    let outString = ""
+    for ( let key in json ) { // loop over each key and prettify it
+      let assignment = json[key] 
+      outString += (`${key.toUpperCase()}\nName: ${assignment.name}\nDue Date: ${assignment["due date"]}\nPercentage: ${assignment.percentage}\n\n`)
+    }
+    return outString
+  }
+
+  const handleExtractedText = (text) => {
+    var prettyString = jsonToPrettyString(JSON.parse(text))
+    setExtractedText(prettyString)
+  }
 
   const handleFileChange = (e) => {
     console.log(e.target)
@@ -27,7 +41,7 @@ const PdfUploader = () => {
         });
 
         if (response.status === 200) {
-            setExtractedText(response.data);
+            handleExtractedText(response.data);
         } else {
             alert("Failed to extract text from the PDF.");
         }
