@@ -1,5 +1,6 @@
 ### How to run
 Make a copy of .env.example with your own values
+
 `npm start`
 
 ### To Do
