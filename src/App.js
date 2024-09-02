@@ -1,5 +1,6 @@
 // import './App.css';
 import PdfUploader from './components/pdfUploader';
+import Output from './components/output';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <p>basic webpage</p>
       </header>
       <PdfUploader />
+      <Output/>
     </div>
   );
 }
